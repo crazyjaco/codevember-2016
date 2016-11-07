@@ -1,0 +1,118 @@
+cassette {
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  margin-left: -195px; }
+
+div.cassette-background {
+  background-color: grey;
+  border-radius: 10px;
+  position: relative;
+  width: 390px;
+  height: 250px; }
+
+div.reel {
+  border-radius: 50%;
+  height: 150px;
+  position: absolute;
+  width: 170px;
+  animation: spin 4s linear infinite;
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  background-image: radial-gradient(ellipse at center, transparent 0%, transparent 20%, black 20%, black 100%); }
+  div.reel.reel-left {
+    height: 120px;
+    left: 65px;
+    top: 55px;
+    width: 100px; }
+  div.reel.reel-right {
+    left: 50%;
+    top: 40px; }
+  div.reel .reel-center {
+    background-color: gray;
+    border-radius: 50%;
+    height: 44px;
+    left: calc( 50% - 22px);
+    position: relative;
+    top: calc( 50% - 22px);
+    width: 44px;
+    background-image: radial-gradient(circle at center, gray 1px, gray 18px, transparent 18px), linear-gradient(to bottom, transparent 1px, transparent 19px, white 19px, white 25px, transparent 25px), linear-gradient(to right, transparent 1px, transparent 19px, white 19px, white 25px, transparent 25px), linear-gradient(to top right, transparent 1px, transparent 28px, white 28px, white 34px, transparent 34px), linear-gradient(to top left, transparent 1px, transparent 28px, white 28px, white 34px, transparent 34px); }
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+div.cassette-foreground {
+  background-color: transparent;
+  border-radius: 10px;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(to bottom, #fef1d3 1px, #fef1d3 20px, transparent 20px), linear-gradient(to right, #fef1d3 1px, #fef1d3 20px, transparent 20px, transparent 370px, #fef1d3 370px), linear-gradient(135deg, #fef1d3 1px, #fef1d3 38px, #b88b6a 38px, #b88b6a 39px, transparent 39px), linear-gradient(225deg, #fef1d3 1px, #fef1d3 38px, #b88b6a 38px, #b88b6a 39px, transparent 39px), linear-gradient(45deg, #fef1d3 1px, #fef1d3 59px, transparent 60px), linear-gradient(-45deg, #fef1d3 1px, #fef1d3 59px, transparent 59px), linear-gradient(to right, transparent 1px, transparent 20px, #b88b6a 20px, #b88b6a 21px, transparent 21px, transparent 369px, #b88b6a 370px, transparent 370px), linear-gradient(to bottom, transparent 1px, transparent 20px, #b88b6a 20px, #b88b6a 21px, transparent 21px, transparent 185px, #b88b6a 185px, #b88b6a 186px, transparent 186px), linear-gradient(to bottom, #fef1d3 1px, #fef1d3 85px, transparent 85px, transparent 140px, #fef1d3 140px), linear-gradient(to right, #fef1d3 1px, #fef1d3 90px, transparent 90px, transparent 140px, #fef1d3 140px, #fef1d3 155px, transparent 155px, transparent 235px, #fef1d3 235px, #fef1d3 255px, transparent 255px, transparent 305px, #fef1d3 305px), radial-gradient(circle at 115px 115px, transparent 1px, transparent 25px, #fef1d3 25px, #fef1d3 40px, transparent 40px), radial-gradient(circle at 280px 115px, transparent 1px, transparent 25px, #fef1d3 25px, #fef1d3 40px, transparent 40px); }
+  div.cassette-foreground span.album-info ul {
+    clear: both;
+    list-style: none inside none;
+    margin: 25px 40px 0px 40px;
+    padding: 0; }
+    div.cassette-foreground span.album-info ul li {
+      float: left;
+      font-size: 12px;
+      padding: 0 5px 0 5px; }
+      div.cassette-foreground span.album-info ul li:first-child {
+        list-style: none; }
+    div.cassette-foreground span.album-info ul li::before {
+      position: absolute;
+      content: '| ';
+      height: 0px;
+      width: 5px; }
+  div.cassette-foreground span.cassette-side {
+    clear: both;
+    display: block;
+    font-size: 45px;
+    font-family: Helvetica;
+    height: 50px;
+    margin-top: -25px;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    width: 20px; }
+  div.cassette-foreground .cassette-head {
+    background-color: transparent;
+    bottom: 0;
+    border-top: 1px solid #b88b6a;
+    left: 50%;
+    margin-left: -124px;
+    position: absolute;
+    height: 55px;
+    width: 248px;
+    background-image: radial-gradient(circle at 30px 40px, gray 1px, gray 10px, transparent 10px), radial-gradient(circle at 68px 36px, gray 1px, gray 8px, transparent 8px), radial-gradient(circle at 178px 36px, gray 1px, gray 8px, transparent 8px), radial-gradient(circle at 215px 40px, gray 1px, gray 10px, transparent 10px); }
+  div.cassette-foreground .cassette-head::before {
+    background-color: transparent;
+    border-left: 1px solid #b88b6a;
+    content: '';
+    height: 58px;
+    margin-left: -6px;
+    margin-top: 1px;
+    width: 20px;
+    position: absolute;
+    transform: rotate(12deg); }
+  div.cassette-foreground .cassette-head::after {
+    background-color: transparent;
+    border-right: 1px solid #b88b6a;
+    content: '';
+    height: 58px;
+    right: 0;
+    margin-right: -6px;
+    margin-top: 1px;
+    width: 20px;
+    position: absolute;
+    transform: rotate(-12deg); }

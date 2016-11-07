@@ -1,0 +1,178 @@
+$foreground-color: #fef1d3;
+$foreground-dark-color: #b88b6a;
+$teeth-color: white;
+$background-color: gray;
+$reel-color: black;
+
+cassette {
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  margin-left: -195px;
+}
+
+div.cassette-background {
+  // opacity: .5;
+  background-color: grey;
+  border-radius: 10px;
+  position: relative;
+  width: 390px;
+  height: 250px;
+}
+
+div.reel {
+  border-radius: 50%;
+  height: 150px;
+  position: absolute;
+  width: 170px;
+  animation:spin 4s linear infinite;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  background-image: radial-gradient( ellipse at center, transparent 0%, transparent 20%, $reel-color 20%, $reel-color 100% );
+
+  &.reel-left {
+    height: 120px;
+    left: 65px;
+    top: 55px;
+    width: 100px;
+  }
+  &.reel-right {
+      left: 50%;
+      top: 40px;
+  }
+  
+  & .reel-center {
+    background-color: $background-color;
+    border-radius: 50%;
+    height: 44px;
+    left: calc( 50% - 22px );
+    position: relative;
+    top: calc( 50% - 22px );
+    width: 44px;
+    background-image: 
+      radial-gradient(circle at center, $background-color 1px, $background-color 18px, transparent 18px),
+      linear-gradient(to bottom, transparent 1px, transparent 19px, $teeth-color 19px, $teeth-color 25px, transparent 25px),
+      linear-gradient(to right, transparent 1px, transparent 19px, $teeth-color 19px, $teeth-color 25px, transparent 25px),
+      // goes up diagonally to the top right. left to right -45deg
+      linear-gradient(to top right, transparent 1px, transparent 28px, $teeth-color 28px, $teeth-color 34px, transparent 34px),
+      linear-gradient(to top left, transparent 1px, transparent 28px, $teeth-color 28px, $teeth-color 34px, transparent 34px);
+  }
+  
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+div.cassette-foreground {
+  background-color: transparent;
+  border-radius: 10px;
+  // opacity: .5;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background:
+    // cover up on the top for the angled label gradients
+    linear-gradient( to bottom, $foreground-color 1px, $foreground-color 20px, transparent 20px ),
+    // cover up for the angled label gradients on the sides
+    linear-gradient( to right, $foreground-color 1px, $foreground-color 20px, transparent 20px, transparent 370px, $foreground-color 370px ),
+    // top left angled border on foreground label area
+    linear-gradient( 135deg, $foreground-color 1px, $foreground-color 38px, $foreground-dark-color 38px, $foreground-dark-color 39px, transparent 39px ),
+    // top right angled border on foreground label area
+    linear-gradient( 225deg, $foreground-color 1px, $foreground-color 38px, $foreground-dark-color 38px, $foreground-dark-color 39px, transparent 39px ),
+    // bottom left border on foreground label area
+    linear-gradient( 45deg , $foreground-color 1px, $foreground-color 59px, transparent 60px ),
+    // bottom right border on foreground label area
+    linear-gradient( -45deg , $foreground-color 1px, $foreground-color 59px, transparent 59px ),
+    // vertical border lines on foreground label area
+    linear-gradient( to right, transparent 1px, transparent 20px, $foreground-dark-color 20px, $foreground-dark-color 21px, transparent 21px, transparent 369px, $foreground-dark-color 370px, transparent 370px),
+    // horizontal border lines on label area
+    linear-gradient(to bottom, transparent 1px, transparent 20px, $foreground-dark-color 20px, $foreground-dark-color 21px, transparent 21px, transparent 185px, $foreground-dark-color 185px, $foreground-dark-color 186px, transparent 186px),
+    // foreground fill above and below reel window
+    linear-gradient(to bottom, $foreground-color 1px, $foreground-color 85px, transparent 85px, transparent 140px, $foreground-color 140px),
+    // foreground fill for left and right of reel window
+    linear-gradient(to right, $foreground-color 1px, $foreground-color 90px, transparent 90px, transparent 140px, $foreground-color 140px, $foreground-color 155px, transparent 155px, transparent 235px, $foreground-color 235px, $foreground-color 255px, transparent 255px, transparent 305px, $foreground-color 305px),
+    // foreground fill around left reel
+    radial-gradient(circle at 115px 115px, transparent 1px, transparent 25px, $foreground-color 25px, $foreground-color 40px, transparent 40px),
+    // foreground fill around right reel
+    radial-gradient(circle at 280px 115px, transparent 1px, transparent 25px, $foreground-color 25px, $foreground-color 40px, transparent 40px);
+  & span.album-info ul {
+    clear: both;
+    list-style: none inside none;
+    margin: 25px 40px 0px 40px;
+    padding: 0;
+    
+    & li {
+      float: left;
+      font-size: 12px;
+      padding: 0 5px 0 5px;
+      
+      &:first-child {
+        list-style: none;
+      }
+    }
+    
+    & li::before {
+      position: absolute;
+      content: '| ';
+      height: 0px;
+      width: 5px;
+    }
+  }
+  & span.cassette-side {
+    clear: both;
+    display: block;
+    font-size: 45px;
+    font-family: Helvetica;
+    height: 50px;
+    margin-top: -25px;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    width: 20px;
+  }
+  
+  & .cassette-head {
+      background-color: transparent;
+      bottom: 0;
+      border-top: 1px solid $foreground-dark-color;
+      left: 50%;
+      margin-left: -124px;
+      position: absolute;
+      height: 55px;
+      width: 248px;
+      background-image: 
+        // left most hole in cassette head
+        radial-gradient( circle at 30px 40px, $background-color 1px, $background-color 10px, transparent 10px),
+        // second left most hole in cassette head
+        radial-gradient( circle at 68px 36px, $background-color 1px, $background-color 8px, transparent 8px),
+        // second right most hole in cassette head
+        radial-gradient( circle at 178px 36px, $background-color 1px, $background-color 8px, transparent 8px),
+        // right most hole in cassette head;
+        radial-gradient( circle at 215px 40px, $background-color 1px, $background-color 10px, transparent 10px);
+  }
+
+  & .cassette-head::before {
+    background-color: transparent;
+    border-left: 1px solid $foreground-dark-color;
+    content: '';
+    height: 58px;
+    margin-left: -6px;
+    margin-top: 1px;
+    width: 20px;
+    position: absolute;
+    transform: rotate(12deg);
+  }
+  & .cassette-head::after {
+    background-color: transparent;
+    border-right: 1px solid $foreground-dark-color;
+    content: '';
+    height: 58px;
+    right: 0;
+    margin-right: -6px;
+    margin-top: 1px;
+    width: 20px;
+    position: absolute;
+    transform: rotate(-12deg);
+  }
+}
