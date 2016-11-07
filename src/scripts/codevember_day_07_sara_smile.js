@@ -2,7 +2,15 @@
 // 	demo of drawing with your nose.
 // https://gist.github.com/lmccart/2273a047874939ad8ad1
 var ctracker;
-function setup() {
+
+
+var getDistance = function(coord1, coord2) {
+	// Distance between two coordinate pairs = pythagorean theorum
+	// (x1 - x2)^2 + (y1 - y2)^2 = distance^2
+	return Math.sqrt( Math.pow((coord1[0] - coord2[0]), 2) + Math.pow((coord1[1] - coord2[1]), 2) );
+}
+
+var setup = function() {
         // setup camera capture
         var videoInput = createCapture(VIDEO);
         videoInput.size(400, 300);
@@ -22,7 +30,7 @@ function setup() {
         noStroke();
 }
 
-function draw() {
+var draw = function() {
 	clear();
 	// get array of face marker positions [x, y] format
 	var positions = ctracker.getCurrentPosition();
@@ -42,10 +50,4 @@ function draw() {
 		// draw ellipse at each position point
 		ellipse(positions[i][0], positions[i][1], 8, 8);
 	}
-}
-
-function getDistance(coord1, coord2) {
-	// Distance between two coordinate pairs = pythagorean theorum
-	// (x1 - x2)^2 + (y1 - y2)^2 = distance^2
-	return Math.sqrt( Math.pow((coord1[0] - coord2[0]), 2) + Math.pow((coord1[1] - coord2[1]), 2) );
 }
