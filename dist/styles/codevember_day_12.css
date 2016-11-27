@@ -1,0 +1,65 @@
+/* Styling for main page of Codevember 2016 site. */
+@import url(http://fonts.googleapis.com/css?family=Raleway:900,500);
+#playlist {
+  position: absolute;
+  left: 50%;
+  margin-left: -164px; }
+  #playlist #songs {
+    padding: 0; }
+    #playlist #songs li.song {
+      background-color: #f4bed5;
+      border: 4px solid #5c82d3;
+      font-family: Helvetica;
+      font-size: 15px;
+      height: 20px;
+      list-style: none;
+      position: relative;
+      padding: 10px;
+      text-align: center;
+      width: 300px; }
+      #playlist #songs li.song span.song-title {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 900;
+        line-height: .25;
+        text-transform: uppercase; }
+      #playlist #songs li.song span.song-title::before,
+      #playlist #songs li.song span.song-title::after {
+        content: '"'; }
+    #playlist #songs li.song.odd::after {
+      background: white;
+      border: 2px solid #5c82d3;
+      content: attr(data-artist);
+      font-size: .8em;
+      height: 20px;
+      left: 50%;
+      line-height: 20px;
+      margin-left: -125px;
+      position: absolute;
+      text-transform: uppercase;
+      top: 32px;
+      width: 250px;
+      z-index: 10; }
+    #playlist #songs li.song.even::before {
+      background: white;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #5c82d3;
+      border-top: 10px solid transparent;
+      content: '';
+      height: 0px;
+      position: absolute;
+      left: 37px;
+      margin-top: -24px;
+      width: 0px;
+      z-index: 10; }
+    #playlist #songs li.song.even::after {
+      background: white;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid #5c82d3;
+      border-top: 10px solid transparent;
+      content: '';
+      height: 0px;
+      position: absolute;
+      right: 33px;
+      margin-top: -24px;
+      width: 0px;
+      z-index: 10; }
