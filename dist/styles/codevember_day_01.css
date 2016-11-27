@@ -1,5 +1,4 @@
-cassette {
-  background-color: black;
+div#cassette {
   position: absolute;
   left: 50%;
   margin-left: -195px; }
